@@ -1,32 +1,28 @@
-# Python-generated files
+# Python
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Node/Vite
 node_modules/
-services/web/ui/node_modules/
-services/web/ui/.vite/
+dist/
+.vite/
 
-# Virtual environments
-.venv
+# Build artifacts
+build/
 
-#recording files
-recordings/**/**/*.mp3
-recordings/**/**/activity/*.wav
-recordings/**/**/activity/*.aac
-recordings/**/**/activity/*.json
+# Environment files
+.env
 
-services/web/data/**/**/activity/*.aac
+# Logs
+*.log
 
-# TLS artifacts
-services/nginx/certs/
+# Data and database volumes
+data/
+postgres_data/
 
-# IDE files
+# IDE/editor
 .idea/
 .vs/
-
-#tempdatabase
-postgres_data/
-/data/kaus/2025-11-02/*.mp3
+.vscode/

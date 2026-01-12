@@ -2,10 +2,10 @@
 
 Use this checklist before submitting automated changes. It complements `AGENTS.md` and `coding_rules.txt`.
 
-1. **Clarify scope** – Identify the service touched (capture, web, transcribe, shared code, or UI), check for nested AGENTS.md files, and avoid back-and-forth questions when the target is already known.
-2. **Plan the smallest diff** – Prefer targeted edits; avoid refactors that cross service boundaries unless required, and choose patterns that are easy to upgrade later.
-3. **Keep data models aligned** – Use shared payload helpers (`services/common/shared_code` and web `app/` utilities) instead of redefining schemas.
-4. **Respect deployment paths** – New assets or scripts should keep Docker Compose mount points and `services/web/static` expectations intact.
-5. **Validate locally** – Run `uv run pre-commit run --all-files`; add pytest/Vite checks relevant to the touched code paths. Keep Ruff aligned with the repo-pinned version (currently 0.14.8) when installing locally.
-6. **Document impacts** – Note env var changes, new ports, or migrations in README + CHANGELOG. Only bump version numbers when the change is substantial (roughly 100+ lines or cross-service refactors).
-7. **Security sanity** – Never log secrets; keep API key enforcement optional but well-tested when enabled.
+1. **Confirm the target** — Identify the service or file you are touching, look for nested `AGENTS.md`, and avoid unnecessary refactors.
+2. **Stay local-first** — Favor workflows that keep code on-device (local repos and local model inference via Ollama or similar runners).
+3. **Prefer small diffs** — Make the smallest change that solves the task and keep patterns consistent with existing files.
+4. **Respect structure** — Use `services/` for containerized services, `scripts/` for setup helpers, and `data/` for persistent volumes.
+5. **Keep tooling consistent** — Use `uv` for Python tooling and align any linting/formatting with the repo defaults.
+6. **Document behavior changes** — Note new env vars, ports, or service changes in `README.md` and `CHANGELOG.md`.
+7. **Protect secrets** — Keep API keys and tokens in env vars or `api_key.txt`, never in code or sample configs.
