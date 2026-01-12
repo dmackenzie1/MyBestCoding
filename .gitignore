@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Node/Vite
+node_modules/
+dist/
+.vite/
+
+# Build artifacts
+build/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# Data and database volumes
+data/
+postgres_data/
+
+# IDE/editor
+.idea/
+.vs/
+.vscode/
