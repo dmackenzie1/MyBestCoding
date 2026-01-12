@@ -1,25 +1,10 @@
 [project]
-name = "chattercatcher-tooling"
-version = "0.4.4"
-description = "Shared tooling configuration for the ChatterCatcher Transcribe workspace."
+name = "my-best-coding"
+version = "0.1.0"
+description = "Local-first AI coding workspace powered by on-device models."
 requires-python = ">=3.11"
 dependencies = [
-    "boto3>=1.41.1",
-    "awscli>=1.43.0",
     "pre-commit>=4.3.0",
     "ruff",
     "pytest>=9.0.2",
 ]
-
-[tool.pytest.ini_options]
-pythonpath = [
-    ".",
-    "services",
-    "services/common",
-    "services/common/shared_code",
-    "services/web",
-    "services/web/app",
-    "services/transcribe",
-    "services/capture",
-]
-testpaths = ["services"]
